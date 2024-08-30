@@ -1,7 +1,9 @@
 <template>
-    <h1 class="mx-auto font-bold text-xl text-center p-6 uppercase">Hi there!</h1>
+    <HomePage />
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+import HomePage from '@/modules/landing/pages/HomePage.vue';
+</script>
 
 <style scoped></style>
