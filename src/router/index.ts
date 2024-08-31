@@ -34,10 +34,32 @@ export const router = createRouter({
 
         // Auth
         {
-            path: '/login',
-            name: 'login',
-            component: () => import('@/modules/auth/pages/LoginPage.vue'),
-        }
+            path: '/auth',
+            redirect: { name: 'login' },
+            component: () => import('@/modules/auth/layouts/AuthLayout.vue'),
+            children: [
+                {
+                    path: 'login',
+                    name: 'login',
+                    component: () => import('@/modules/auth/pages/LoginPage.vue'),
+                },
+                {
+                    path: 'register',
+                    name: 'register',
+                    component: () => import('@/modules/auth/pages/RegisterPage.vue'),
+                },
+                {
+                    path: 'forgot-password',
+                    name: 'forgot-password',
+                    component: () => import('@/modules/auth/pages/ForgotPage.vue'),
+                }
+            ]
+        },
+        // {
+        //     path: '/login',
+        //     name: 'login',
+        //     component: () => import('@/modules/auth/pages/LoginPage.vue'),
+        // }
     ],
 });
 

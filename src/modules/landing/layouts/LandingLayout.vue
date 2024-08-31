@@ -18,7 +18,6 @@
                 <RouterLink to="/features"> Features </RouterLink>
                 <RouterLink :to="'/pricing'"> Pricing </RouterLink>
                 <RouterLink to="/contact"> Contact </RouterLink>
-                <!-- <RouterLink :to="{ name: 'login' }"> Login </RouterLink> -->
             </nav>
         </header>
         <!-- Fin Header -->
