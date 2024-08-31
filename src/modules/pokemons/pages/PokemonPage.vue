@@ -15,8 +15,12 @@
                     Javascript Bootcamp for Absolute Beginners
                 </h1> -->
                 <div class="my-4 flex justify-between">
-                    <RouterLink :to="{ name: 'pokemons', params: { id: props.id + 1 } }" 
-                        class="mt-8 text-xl text-white bg-indigo-600 py-2.5 px-6 rounded-xl shadow-lg" >
+                    <RouterLink :to="{ name: 'pokemons', params: { id: (props.id > 1 ) ? props.id - 1 : props.id } }" 
+                        class="mt-8 text-xl text-white py-2.5 px-6 rounded-xl shadow-lg"
+                        :class="{
+                            'bg-gray-400 cursor-default' : props.id === 1,
+                            'bg-indigo-600 cursor-pointer' : props.id > 1
+                        }" >
                         <i class="fa-solid fa-angle-left"></i>
                     </RouterLink>
                     <RouterLink :to="{ name: 'pokemons', params: { id: props.id + 1 } }" 
@@ -34,7 +38,7 @@ import { RouterLink } from 'vue-router';
 
 
 interface Props {
-    id: string;
+    id: number;
 }
 
 const props = defineProps<Props>();
