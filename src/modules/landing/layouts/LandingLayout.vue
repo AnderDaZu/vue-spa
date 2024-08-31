@@ -18,6 +18,7 @@
                 <RouterLink to="/features"> Features </RouterLink>
                 <RouterLink :to="'/pricing'"> Pricing </RouterLink>
                 <RouterLink to="/contact"> Contact </RouterLink>
+                <RouterLink :to="{ name: 'pokemons' }">Pokemons</RouterLink>
                 <RouterLink :to="{ name: 'login' }" class=" bg-blue-600 px-2 py-1.5 rounded-md text-gray-50 hover:bg-blue-700 hover:text-white transition-colors">Iniciar sesión</RouterLink>
             </nav>
         </header>
