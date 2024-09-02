@@ -8,6 +8,6 @@
     </div>
 </template>
 
-<script setup></script>
+<script lang="ts" src="./HomePage.ts"></script>
 
 <style lang="scss" scoped></style>
