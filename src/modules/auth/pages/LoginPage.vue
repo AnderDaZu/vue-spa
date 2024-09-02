@@ -40,16 +40,15 @@
                 </svg>
                 <input
                     class="pl-2 w-full outline-none border-none"
-                    type="password"
+                    type="current-password"
                     name="password"
                     id="password"
                     placeholder="Password"
                 />
             </div>
-            <button
-                type="submit"
-                class="block w-full bg-indigo-600 mt-5 py-2 rounded-2xl hover:bg-indigo-700 hover:-translate-y-1 transition-all duration-500 text-white font-semibold mb-2"
-            >
+            <button type="button"
+                v-on:click="onLogin"
+                class="block w-full bg-indigo-600 mt-5 py-2 rounded-2xl hover:bg-indigo-700 hover:-translate-y-1 transition-all duration-500 text-white font-semibold mb-2" >
                 Iniciar sesión
             </button>
 
@@ -69,3 +68,22 @@
         </form>
     </div>
 </template>
+
+<script lang="ts" setup>
+import { useRouter } from 'vue-router';
+
+
+const router = useRouter();
+const onLogin = () => {
+    console.log('login');
+    
+    localStorage.setItem('userId', 'ABC-123');
+
+    const lastPath = localStorage.getItem('lastPath') ?? '/';
+
+    router.replace(lastPath);
+    // router.replace({
+    //     name: 'home',
+    // });
+}
+</script>

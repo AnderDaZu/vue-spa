@@ -1,6 +1,6 @@
 <template>
     <!-- component -->
-    <div class="flex flex-row justify-center items-center lg:h-screen">
+    <div class="flex flex-row justify-center items-center h-screen">
         <!-- Left: Image -->
         <div class="w-1/2 hidden lg:block ">
             <img

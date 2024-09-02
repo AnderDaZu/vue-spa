@@ -1,3 +1,4 @@
+import isAuthenticatedGuard from "@/modules/auth/guards/is-authenticated.guard";
 import NotFound404 from "@/modules/common/pages/NotFound404.vue";
 import HomePage from "@/modules/landing/pages/HomePage.vue";
 import { createRouter, createWebHistory } from "vue-router";
@@ -35,6 +36,13 @@ export const router = createRouter({
                 {
                     path: '/pokemons/:id',
                     name: 'pokemons',
+                    beforeEnter: [
+                        isAuthenticatedGuard
+                        // (to, from, next) => {
+                        //     console.log({ to, from, next });
+                        //     return next();
+                        // }
+                    ],
                     // props: true,
                     props: ( route ) => {
                         const id = +route.params.id; // convertir a numero
