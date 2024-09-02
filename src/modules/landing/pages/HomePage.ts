@@ -11,6 +11,7 @@ import {
     onRenderTriggered,
     onUpdated,
     onUnmounted,
+    ref,
 } from 'vue';
 
 export default defineComponent({
@@ -52,5 +53,11 @@ export default defineComponent({
         onDeactivated(() => {
             console.log('Deactivated');
         });
+
+        const counter = ref(0);
+
+        return {
+            counter,
+        };
     }
 });
